@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.24)
+project(Neural_Network_Visualizer)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(Neural_Network_Visualizer main.cpp src/modeling/predictive_modeling/PNNResources.cpp src/modeling/predictive_modeling/PNNResources.h src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp src/modeling/predictive_modeling/PredictiveNeuralNetwork.h src/modeling/predictive_modeling/PredictiveNeuralNetwork.h src/modeling/Model.cpp src/modeling/Model.h src/modeling/Model.h src/resource_methods/Constants.h)
