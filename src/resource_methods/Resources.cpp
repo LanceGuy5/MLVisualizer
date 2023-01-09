@@ -4,17 +4,19 @@
 
 #include <sstream>
 #include <vector>
+#include <cmath>
 
-#include "PNNResources.h"
+#include "Resources.h"
 
-using namespace PENNResources;
 using namespace std;
 
-double PNNResources::sigmoid(double val){
+const double EulerConstant = std::exp(1.0);
 
+double Resources::sigmoid(double val){
+    return 1 / (1 + pow(EulerConstant, val));
 }
 
-vector<string> PNNResources::getCSVAsStringVector(fstream ifread, const string& fileName) {
+vector<string> Resources::getCSVAsStringVector(fstream ifread, const string& fileName) {
     vector<string> temp;
     ifread.open(fileName);
     string currLine;
@@ -24,4 +26,3 @@ vector<string> PNNResources::getCSVAsStringVector(fstream ifread, const string& 
     ifread.close();
     return temp;
 }
-
