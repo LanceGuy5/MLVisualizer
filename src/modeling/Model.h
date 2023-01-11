@@ -9,6 +9,11 @@
 // Allows for opening/saving models with ease
 class Model {
 public:
+    Model(int _inputNodes,
+          int _hiddenLayers,
+          int _outputNodes,
+          int _epochs,
+          double _learningRate);
     void save();
     virtual void load() = 0;
 protected:
@@ -19,6 +24,5 @@ protected:
     double _learningRate{};
     //TODO DETERMINE OTHER VARIABLES NEEDED
 };
-
 
 #endif //NEURAL_NETWORK_VISUALIZER_MODEL_H

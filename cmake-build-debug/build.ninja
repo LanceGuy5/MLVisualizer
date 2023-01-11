@@ -50,30 +50,28 @@ cmake_ninja_workdir = C$:/Users/zlhartma/CLionProjects/Neural$ Network$ Visualiz
 build cmake_object_order_depends_target_Neural_Network_Visualizer: phony || CMakeFiles/Neural_Network_Visualizer.dir
 
 build CMakeFiles/Neural_Network_Visualizer.dir/main.cpp.obj: CXX_COMPILER__Neural_Network_Visualizer_Debug C$:/Users/zlhartma/CLionProjects/Neural$ Network$ Visualizer/main.cpp || cmake_object_order_depends_target_Neural_Network_Visualizer
+  DEFINES = -D_GLIBCXX_USE_CXX11_ABI=0
   DEP_FILE = CMakeFiles\Neural_Network_Visualizer.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++1z
   OBJECT_DIR = CMakeFiles\Neural_Network_Visualizer.dir
   OBJECT_FILE_DIR = CMakeFiles\Neural_Network_Visualizer.dir
 
-build CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/predictive_modeling/PNNResources.cpp.obj: CXX_COMPILER__Neural_Network_Visualizer_Debug C$:/Users/zlhartma/CLionProjects/Neural$ Network$ Visualizer/src/modeling/predictive_modeling/PNNResources.cpp || cmake_object_order_depends_target_Neural_Network_Visualizer
-  DEP_FILE = CMakeFiles\Neural_Network_Visualizer.dir\src\modeling\predictive_modeling\PNNResources.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++1z
-  OBJECT_DIR = CMakeFiles\Neural_Network_Visualizer.dir
-  OBJECT_FILE_DIR = CMakeFiles\Neural_Network_Visualizer.dir\src\modeling\predictive_modeling
-
 build CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp.obj: CXX_COMPILER__Neural_Network_Visualizer_Debug C$:/Users/zlhartma/CLionProjects/Neural$ Network$ Visualizer/src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp || cmake_object_order_depends_target_Neural_Network_Visualizer
+  DEFINES = -D_GLIBCXX_USE_CXX11_ABI=0
   DEP_FILE = CMakeFiles\Neural_Network_Visualizer.dir\src\modeling\predictive_modeling\PredictiveNeuralNetwork.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++1z
   OBJECT_DIR = CMakeFiles\Neural_Network_Visualizer.dir
   OBJECT_FILE_DIR = CMakeFiles\Neural_Network_Visualizer.dir\src\modeling\predictive_modeling
 
 build CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/Model.cpp.obj: CXX_COMPILER__Neural_Network_Visualizer_Debug C$:/Users/zlhartma/CLionProjects/Neural$ Network$ Visualizer/src/modeling/Model.cpp || cmake_object_order_depends_target_Neural_Network_Visualizer
+  DEFINES = -D_GLIBCXX_USE_CXX11_ABI=0
   DEP_FILE = CMakeFiles\Neural_Network_Visualizer.dir\src\modeling\Model.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++1z
   OBJECT_DIR = CMakeFiles\Neural_Network_Visualizer.dir
   OBJECT_FILE_DIR = CMakeFiles\Neural_Network_Visualizer.dir\src\modeling
 
 build CMakeFiles/Neural_Network_Visualizer.dir/src/resource_methods/Resources.cpp.obj: CXX_COMPILER__Neural_Network_Visualizer_Debug C$:/Users/zlhartma/CLionProjects/Neural$ Network$ Visualizer/src/resource_methods/Resources.cpp || cmake_object_order_depends_target_Neural_Network_Visualizer
+  DEFINES = -D_GLIBCXX_USE_CXX11_ABI=0
   DEP_FILE = CMakeFiles\Neural_Network_Visualizer.dir\src\resource_methods\Resources.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++1z
   OBJECT_DIR = CMakeFiles\Neural_Network_Visualizer.dir
@@ -87,7 +85,7 @@ build CMakeFiles/Neural_Network_Visualizer.dir/src/resource_methods/Resources.cp
 #############################################
 # Link the executable Neural_Network_Visualizer.exe
 
-build Neural_Network_Visualizer.exe: CXX_EXECUTABLE_LINKER__Neural_Network_Visualizer_Debug CMakeFiles/Neural_Network_Visualizer.dir/main.cpp.obj CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/predictive_modeling/PNNResources.cpp.obj CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp.obj CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/Model.cpp.obj CMakeFiles/Neural_Network_Visualizer.dir/src/resource_methods/Resources.cpp.obj
+build Neural_Network_Visualizer.exe: CXX_EXECUTABLE_LINKER__Neural_Network_Visualizer_Debug CMakeFiles/Neural_Network_Visualizer.dir/main.cpp.obj CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp.obj CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/Model.cpp.obj CMakeFiles/Neural_Network_Visualizer.dir/src/resource_methods/Resources.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Neural_Network_Visualizer.dir
