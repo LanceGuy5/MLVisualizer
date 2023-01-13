@@ -5,21 +5,16 @@
 #include <fstream>
 #include <vector>
 #include <typeinfo>
+#include <iostream>
 
 #include "PredictiveNeuralNetwork.h"
 #include "../../resource_methods/Resources.h"
 
 // The template element is the
 template <typename T> PredictiveNeuralNetwork<T>::PredictiveNeuralNetwork(int inputNodes,
-                                                 int hiddenLayers,
-                                                 int outputNodes,
-                                                 int epochs,
-                                                 double learningRate):
-                                                 Model(inputNodes,
-                                                       hiddenLayers,
-                                                       outputNodes,
-                                                       epochs,
-                                                       learningRate) {
+        int hiddenLayers, int outputNodes, int epochs, double learningRate, double allowedError):
+    Model(inputNodes, hiddenLayers, outputNodes, epochs, learningRate, allowedError) {
+
 }
 
 //template <typename T> PredictiveNeuralNetwork<T>::~PredictiveNeuralNetwork() {
@@ -44,21 +39,32 @@ template <typename T> string PredictiveNeuralNetwork<T>::getRawDataType(){
     return typeid(T).name();
 }
 
+template <typename T> void PredictiveNeuralNetwork<T>::train(){
+    cout << "Training. . ." << endl;
+}
+
 //PRIVATE
 
 template <typename T> vector<string>* PredictiveNeuralNetwork<T>::getData() {
     return &dataVector;
 }
 
-template <typename T> vector<vector<vector<T>>> PredictiveNeuralNetwork<T>::getDataAsTypeComponents(const string& delimiter) {
-    vector<vector<vector<T>>> ret;
+template <typename T> vector<vector<string>> PredictiveNeuralNetwork<T>::getDataAsTypeComponents(char delimiter) {
+    vector<vector<T>> ret;
     for(const string& temp : dataVector) {
         size_t pos = 0;
         size_t loc = 0;
-        string token;
-        while((pos = temp.find(delimiter)) != string::npos){
-            token = temp.substr(loc, pos);
-            loc = pos;
+        vector<string> lineVec;
+        while(pos <= temp.length()){
+            if(temp.at(pos) == delimiter) {
+                string token = temp.substr(loc, pos);
+                lineVec.push_back(token);
+                loc = pos;
+            }
+            pos++;
         }
+        ret.push_back(lineVec);
+        lineVec.clear();
     }
+    return ret;
 }

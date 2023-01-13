@@ -7,6 +7,7 @@
 
 #include <fstream>
 #include <vector>
+#include <set>
 
 using namespace std;
 
@@ -14,6 +15,8 @@ class Resources {
 public:
     static double sigmoid(double val);
     static vector<string> getCSVAsStringVector(fstream ifread, const string& fileName);
+    static double sigmoidDerivative(double val);
+    static std::set<std::string> tokenizeWords(string arr[]);
 };
 
 

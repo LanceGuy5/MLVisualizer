@@ -14,16 +14,18 @@ public:
                             int hiddenLayers,
                             int outputNodes,
                             int epochs,
-                            double learningRate);
+                            double learningRate,
+                            double allowedError);
 //    ~PredictiveNeuralNetwork(); //TODO DEFINE CONSTRUCTOR
     void load() override;
     void insertData(const std::string& pathName);
     std::vector<std::string> getDataCopy();
     std::string getRawDataType();
+    void train() override;
 private:
     std::vector<std::string> dataVector{};
     std::vector<std::string>* getData();
-    std::vector<std::vector<std::vector<T>>> getDataAsTypeComponents(const std::string& delimiter);
+    std::vector<std::vector<std::string>> getDataAsTypeComponents(char delimiter);
 };
 
 #endif //NEURAL_NETWORK_VISUALIZER_PREDICTIVENEURALNETWORK_H
