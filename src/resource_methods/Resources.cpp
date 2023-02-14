@@ -6,16 +6,25 @@
 #include <vector>
 #include <cmath>
 #include <set>
+#include <iostream>
 
 #include "Resources.h"
 
 using namespace std;
+
+//MATH
 
 const double EulerConstant = std::exp(1.0);
 
 double Resources::sigmoid(double val){
     return 1 / (1 + pow(EulerConstant, val));
 }
+
+double Resources::sigmoidDerivative(double val) {
+    return sigmoid(val) * (1 - sigmoid(val));
+}
+
+//FILE MANAGEMENT
 
 vector<string> Resources::getCSVAsStringVector(fstream ifread, const string& fileName) {
     vector<string> temp;
@@ -28,16 +37,14 @@ vector<string> Resources::getCSVAsStringVector(fstream ifread, const string& fil
     return temp;
 }
 
-double Resources::sigmoidDerivative(double val) {
-    return sigmoid(val) * (1 - sigmoid(val));
-}
+//DATA MANIPULATION
 
 set<string> Resources::tokenizeWords(string *arr) {
     set<string> ret;
     for(int i = 0; i < arr->length(); ++i){
-        if(ret.find(arr[i]) == ret.end()){
+//        if(ret.find(arr[i]) == ret.end()){
             ret.insert(arr[i]);
-        }
+//        }
     }
     return ret;
 }

@@ -8,7 +8,8 @@
 #include <vector>
 #include "../Model.h"
 
-template <typename T> class PredictiveNeuralNetwork : public Model{
+template <typename T>
+class PredictiveNeuralNetwork : public Model{
 public:
     PredictiveNeuralNetwork(int inputNodes,
                             int hiddenLayers,
@@ -16,7 +17,7 @@ public:
                             int epochs,
                             double learningRate,
                             double allowedError);
-//    ~PredictiveNeuralNetwork(); //TODO DEFINE CONSTRUCTOR
+    ~PredictiveNeuralNetwork(); //TODO DEFINE DECONSTRUCTOR
     void load() override;
     void insertData(const std::string& pathName);
     std::vector<std::string> getDataCopy();
