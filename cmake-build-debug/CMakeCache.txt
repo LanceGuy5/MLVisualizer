@@ -14,6 +14,15 @@
 # EXTERNAL cache entries
 ########################
 
+//Build the shared library
+BUILD_SHARED_LIBS:BOOL=ON
+
+//Build the static library
+BUILD_STATIC_LIBS:BOOL=ON
+
+//Build test programs
+BUILD_TESTS:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/MinGW/bin/addr2line.exe
 
@@ -239,6 +248,113 @@ CMAKE_STRIP:FILEPATH=C:/MinGW/bin/strip.exe
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a file.
+FREETYPE_INCLUDE_DIR_freetype2:PATH=FREETYPE_INCLUDE_DIR_freetype2-NOTFOUND
+
+//Path to a file.
+FREETYPE_INCLUDE_DIR_ft2build:PATH=FREETYPE_INCLUDE_DIR_ft2build-NOTFOUND
+
+//Path to a library.
+FREETYPE_LIBRARY_DEBUG:FILEPATH=FREETYPE_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+FREETYPE_LIBRARY_RELEASE:FILEPATH=FREETYPE_LIBRARY_RELEASE-NOTFOUND
+
+//Path to a file.
+GLUT_INCLUDE_DIR:PATH=GLUT_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+GLUT_glut_LIBRARY_DEBUG:FILEPATH=GLUT_glut_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GLUT_glut_LIBRARY_RELEASE:FILEPATH=GLUT_glut_LIBRARY_RELEASE-NOTFOUND
+
+//Include the ImGui demo window implementation in library
+IMGUI_DEMO:BOOL=ON
+
+//Disable use of file functions
+IMGUI_DISABLE_FILE_FUNCTIONS:BOOL=OFF
+
+//Disable deprecated functions
+IMGUI_DISABLE_OBSOLETE_FUNCTIONS:BOOL=ON
+
+//Disable legacy input handling
+IMGUI_DISABLE_OBSOLETE_KEYIO:BOOL=ON
+
+//Enable compiler-based sanitizers
+IMGUI_ENABLE_ASAN:BOOL=OFF
+
+//Enable coverage testing for supported compilers
+IMGUI_ENABLE_COVERAGE:BOOL=OFF
+
+//Enable FreeType font rasterizer
+IMGUI_ENABLE_FREETYPE:BOOL=ON
+
+//Enable extra functions taking stdlib types
+IMGUI_ENABLE_STDLIB_SUPPORT:BOOL=OFF
+
+//Enable tracy profiling
+IMGUI_ENABLE_TRACY:BOOL=OFF
+
+//Build ImGui examples
+IMGUI_EXAMPLES:BOOL=ON
+
+//A custom GLFW target name that will be used for linking to examples.
+IMGUI_GLFW_TARGET:STRING=
+
+//A custom GLFW target name that will be used for linking to examples.
+IMGUI_GLUT_TARGET:STRING=
+
+//Build the DirectX 10 implementation (only if supported)
+IMGUI_IMPL_DX10:BOOL=ON
+
+//Build the DirectX 11 implementation (only if supported)
+IMGUI_IMPL_DX11:BOOL=ON
+
+//Build the DirectX 12 implementation (only if supported)
+IMGUI_IMPL_DX12:BOOL=ON
+
+//Build the DirectX 9 implementation (only if supported)
+IMGUI_IMPL_DX9:BOOL=ON
+
+//Build the GLFW implementation (only if supported)
+IMGUI_IMPL_GLFW:BOOL=ON
+
+//Build the GLUT implementation (only if supported)
+IMGUI_IMPL_GLUT:BOOL=ON
+
+//Build the Metal implementation (only if supported)
+IMGUI_IMPL_METAL:BOOL=OFF
+
+//Build the OpenGL 2 (legacy) implementation (only if supported)
+IMGUI_IMPL_OPENGL2:BOOL=ON
+
+//Build the OpenGL 3 implementation (only if supported)
+IMGUI_IMPL_OPENGL3:BOOL=ON
+
+//Build the OSX implementation (only if supported)
+IMGUI_IMPL_OSX:BOOL=OFF
+
+//Build the SDL implementation (only if supported)
+IMGUI_IMPL_SDL:BOOL=ON
+
+//Build the Vulkan implementation (only if supported)
+IMGUI_IMPL_VULKAN:BOOL=ON
+
+//Build the Win32 (native winapi) implementation (only if supported)
+IMGUI_IMPL_WIN32:BOOL=ON
+
+IMGUI_SDL_TARGET:STRING=sdl
+
+//Value Computed by CMake
+ImGui_BINARY_DIR:STATIC=C:/Users/zlhartma/CLionProjects/Neural Network Visualizer/cmake-build-debug/src/rendering/imgui
+
+//Value Computed by CMake
+ImGui_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ImGui_SOURCE_DIR:STATIC=C:/Users/zlhartma/CLionProjects/Neural Network Visualizer/src/rendering/imgui
+
 //Value Computed by CMake
 Neural_Network_Visualizer_BINARY_DIR:STATIC=C:/Users/zlhartma/CLionProjects/Neural Network Visualizer/cmake-build-debug
 
@@ -247,6 +363,48 @@ Neural_Network_Visualizer_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Neural_Network_Visualizer_SOURCE_DIR:STATIC=C:/Users/zlhartma/CLionProjects/Neural Network Visualizer
+
+//OpenGL library for win32
+OPENGL_gl_LIBRARY:STRING=opengl32
+
+//GLU library for win32
+OPENGL_glu_LIBRARY:STRING=glu32
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
+
+//The directory containing a CMake configuration file for SDL2.
+SDL2_DIR:PATH=SDL2_DIR-NOTFOUND
+
+//Path to a program.
+Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-NOTFOUND
+
+//Path to a program.
+Vulkan_GLSLC_EXECUTABLE:FILEPATH=Vulkan_GLSLC_EXECUTABLE-NOTFOUND
+
+//Path to a file.
+Vulkan_INCLUDE_DIR:PATH=Vulkan_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
+
+//The directory containing a CMake configuration file for catkin.
+catkin_DIR:PATH=catkin_DIR-NOTFOUND
+
+//Value Computed by CMake
+imgui_BINARY_DIR:STATIC=C:/Users/zlhartma/CLionProjects/Neural Network Visualizer/cmake-build-debug/src/rendering/imgui
+
+//The directory containing a CMake configuration file for imgui.
+imgui_DIR:PATH=imgui_DIR-NOTFOUND
+
+//Value Computed by CMake
+imgui_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+imgui_SOURCE_DIR:STATIC=C:/Users/zlhartma/CLionProjects/Neural Network Visualizer/src/rendering/imgui
 
 
 ########################
@@ -405,6 +563,46 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[opengl32][c ][v()]
+//ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
+FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_INCLUDE_DIR_ft2build
+FREETYPE_INCLUDE_DIR_ft2build-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_LIBRARY_DEBUG
+FREETYPE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_LIBRARY_RELEASE
+FREETYPE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLUT_INCLUDE_DIR
+GLUT_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLUT_glut_LIBRARY_DEBUG
+GLUT_glut_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLUT_glut_LIBRARY_RELEASE
+GLUT_glut_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Have include d3d10.h
+HAS_D3D10:INTERNAL=
+//Have include d3d11.h
+HAS_D3D11:INTERNAL=
+//Have include d3d12.h
+HAS_D3D12:INTERNAL=
+//Have include d3d9.h
+HAS_D3D9:INTERNAL=1
+//ADVANCED property for variable: OPENGL_gl_LIBRARY
+OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_glu_LIBRARY
+OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_GLSLANG_VALIDATOR_EXECUTABLE
+Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_GLSLC_EXECUTABLE
+Vulkan_GLSLC_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_INCLUDE_DIR
+Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_LIBRARY
+Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 

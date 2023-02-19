@@ -25,6 +25,7 @@ protected:
     int _hiddenLayers{};
     int _outputNodes{};
     int _epochs{};
+    double _bias{};
     double _learningRate{};
     double _allowedError{};
     int _hiddenNodesPerLayer = floor(_inputNodes * (2.0 / 3.0) + _outputNodes);

@@ -3,5 +3,7 @@ project(Neural_Network_Visualizer)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Neural_Network_Visualizer main.cpp src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp src/modeling/predictive_modeling/PredictiveNeuralNetwork.h src/modeling/predictive_modeling/PredictiveNeuralNetwork.h src/modeling/Model.cpp src/modeling/Model.h src/modeling/Model.h src/resource_methods/Constants.h src/resource_methods/Resources.cpp src/resource_methods/Resources.h src/resource_methods/Resources.h src/window/window.cpp src/window/window.h)
+#add_subdirectory("src/rendering/imgui")
+
+add_executable(Neural_Network_Visualizer main.cpp src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp src/modeling/predictive_modeling/PredictiveNeuralNetwork.h src/modeling/predictive_modeling/PredictiveNeuralNetwork.h src/modeling/Model.cpp src/modeling/Model.h src/modeling/Model.h src/resource_methods/Constants.h src/resource_methods/Resources.cpp src/resource_methods/Resources.h src/resource_methods/Resources.h src/rendering/Renderer.cpp src/rendering/Renderer.h)
 add_compile_definitions(_GLIBCXX_USE_CXX11_ABI=0)
