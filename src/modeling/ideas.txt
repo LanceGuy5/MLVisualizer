@@ -1,0 +1,7 @@
+Regression modeling
+Classification modeling
+Recommender (should be the same as predictive)
+Time series analysis (again, should be the same as predictive)
+NLP
+Character Recognition
+Generative
