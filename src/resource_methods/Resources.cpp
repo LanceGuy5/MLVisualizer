@@ -17,12 +17,12 @@ using namespace std;
 
 const double EulerConstant = exp(1.0);
 
-double Resources::sigmoid(double val){
-    return 1 / (1 + pow(EulerConstant, val));
+double Resources::sigmoid(double real, double pred){
+    return 1 / (1 + pow(EulerConstant, real - pred));
 }
 
-double Resources::sigmoidDerivative(double val) {
-    return sigmoid(val) * (1 - sigmoid(val));
+double Resources::sigmoidDerivative(double real, double pred) {
+    return sigmoid(real, pred) * (1 - sigmoid(real, pred));
 }
 
 double Resources::tanhActivation(double val) {
@@ -59,27 +59,36 @@ double Resources::logCoshLoss(double real, double pred) {
     return ::log(::cosh(pred - real));
 }
 
+double Resources::logCoshDerivative(double real, double pred) {
+    return ::tanh(pred - real);
+}
+
+bool Resources::isNumber(const string& s) {
+    long double ld;
+    return((::istringstream(s) >> ld >> ::ws).eof());
+}
+
+long double Resources::getDoubleFromString(const std::string& s) {
+    long double ld;
+    if(isNumber(s)){
+        ::istringstream(s) >> ld >> ::ws;
+        return ld;
+    }else return 0.0;
+}
+
 //FILE MANAGEMENT
 
 vector<string> Resources::getCSVAsStringVector(fstream ifread, const string& fileName) {
     vector<string> temp;
-    ifread.open(fileName);
+    try {
+        ifread.open(fileName);
+    }catch(exception &e){
+        cout << e.what() << endl;
+    }
     string currLine;
     while(getline(ifread, currLine)){
         temp.push_back(currLine);
     }
     ifread.close();
     return temp;
-}
-
-//DATA MANIPULATION
-
-set<string> Resources::tokenizeWords(string *arr) {
-    set<string> ret;
-    for(int i = 0; i < arr->length(); ++i){
-//        if(ret.find(arr[i]) == ret.end()){
-            ret.insert(arr[i]);
-//        }
-    }
-    return ret;
 }

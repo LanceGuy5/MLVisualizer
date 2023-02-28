@@ -19,7 +19,7 @@ public:
           double _allowedError);
     void save();
     virtual void load() = 0;
-    virtual void train() = 0;
+    virtual void train(int rowNum) = 0;
 protected:
     int _inputNodes{};
     int _hiddenLayers{};

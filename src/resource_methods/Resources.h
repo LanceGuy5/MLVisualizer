@@ -13,15 +13,17 @@ using namespace std;
 
 class Resources {
 public:
-    static double sigmoid(double val);
-    static double sigmoidDerivative(double val);
+    static double sigmoid(double real, double pred);
+    static double sigmoidDerivative(double real, double pred);
     static double tanhActivation(double val);
     static double reluActivation(double val, double beta);
     static double dotProduct(std::vector<double> one, std::vector<double> two);
     static double singleOutputForwardPass(std::vector<double> one, std::vector<double> two, double (*activation)(double));
     static double logCoshLoss(double real, double pred);
+    static double logCoshDerivative(double real, double pred);
     static vector<string> getCSVAsStringVector(fstream ifread, const string& fileName);
-    static std::set<std::string> tokenizeWords(string arr[]);
+    static bool isNumber(const std::string& s);
+    static long double getDoubleFromString(const std::string& s);
 };
 
 
