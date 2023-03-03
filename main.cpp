@@ -1,6 +1,6 @@
 #include <iostream>
-#include "src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp"
-#include "src/modeling/predictive_modeling/PredictiveNeuralNetwork.h"
+#include "src/modeling/feedforward_network/PredictiveNeuralNetwork.cpp"
+#include "src/modeling/feedforward_network/PredictiveNeuralNetwork.h"
 
 using namespace std;
 

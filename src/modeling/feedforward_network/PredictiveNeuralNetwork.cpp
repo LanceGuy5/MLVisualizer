@@ -7,6 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <random>
+#include<array>
 
 #include "PredictiveNeuralNetwork.h"
 #include "../../resource_methods/Resources.h"
@@ -48,10 +49,10 @@ PredictiveNeuralNetwork<T>::PredictiveNeuralNetwork(int inputNodes,
 
 template <typename T> PredictiveNeuralNetwork<T>::~PredictiveNeuralNetwork() {
     //TODO Save file
-//    delete(this->_weights);
-//    delete(this->_dicts);
-//    delete(this->trainDataVector);
-//    delete(this->_bias);
+    delete(addressof(_weights));
+    delete(addressof(_dicts));
+    delete(addressof(trainDataVector));
+    delete(addressof(_bias));
 }
 
 //PUBLIC
@@ -100,10 +101,10 @@ string PredictiveNeuralNetwork<T>::getRawDataType(){
 /*
  *  LAYERS -> multiple layers work on each row, not overall
  *  Will work better with better-formatted data
- *  TODO use a map for the dicts -> <key, val> <row #, set<double>>
+ *  Use a map for the dicts -> <key, val> <row #, set<double>>
  *
  *  STEPS:
- *  1. Format data - might need to mess around with this a little bit
+ *  1. Format data
  *  2. Instantiate weights as an empty vector<vector> of random generated numbers (as a vector because dot product)
  *  3. Run through the training for _epochs number of epochs
  *  4. Make a prediction for the data
@@ -112,36 +113,36 @@ template <typename T>
 void PredictiveNeuralNetwork<T>::train(int rowNum){
     vector<vector<string>> componentVector = getDataAsTypeComponents(',');
     vector<vector<double>> modCompVector = processDataForTraining(componentVector);
-    for(const vector<double>& vec : modCompVector){
-        cout << "NL: ";
-        for(double d : vec){
-            cout << d << ", ";
-        }
-        cout << endl;
-    }
+//    for(const vector<double>& vec : modCompVector){
+//        cout << "NL: ";
+//        for(double d : vec){
+//            cout << d << ", ";
+//        }
+//        cout << endl;
+//    }
     //TODO Mess with epochs?
-//    for(int i = 0; i < _epochs; i++){
-//        cout << "Epoch " << (i + 1) << ":" << endl;
-//        double error; //This is the error of our prediction -> result of the error function f(x)
-//        double pred = getRowPrediction(); Make sure to access modified data before getting the row prediction
+    for(int i = 0; i < _epochs; i++){
+        cout << "Epoch " << (i + 1) << ":" << endl;
+        double error; //This is the error of our prediction -> result of the error function f(x)
+//        double pred = getRowPrediction(); //Make sure to access modified data before getting the row prediction
 //        switch(_func){ //Finding the error based on a function determined by the user
 //            case LOGCOSH:
 ////                error = Resources::logCoshLoss();
 //        }
-        //First, repeat this process for each individual layer of the graph
-//        for(const vector<double>& layer : _weights){
-//            double real = 0.0;
-////            for(int j = 0; j < layer.size(); j++){
-////                if(j == rowNum){
-////                    //set the real variable to the value of modified componentvector at j
-////                }else{
-////                    //add modified componentvector * weight to error at point
-////                }
-////            }
-//        }
-//        cout << "------------------------------------------" << endl;
-//    }
-//    _isTrained = true;
+//        First, repeat this process for each individual layer of the graph
+        for(const vector<double>& layer : _weights){
+            double real = 0.0;
+//            for(int j = 0; j < layer.size(); j++){
+//                if(j == rowNum){
+//                    //set the real variable to the value of modified componentvector at j
+//                }else{
+//                    //add modified componentvector * weight to error at point
+//                }
+//            }
+        }
+        cout << "------------------------------------------" << endl;
+    }
+    _isTrained = true;
 }
 
 /*
@@ -153,10 +154,12 @@ void PredictiveNeuralNetwork<T>::train(int rowNum){
  * 5. The value of the SOFP is either returned (if a double) or conditioned based on dicts
  */
 template<typename T>
-double PredictiveNeuralNetwork<T>::getRowPrediction(vector<double> inputData, int row) {
+double PredictiveNeuralNetwork<T>::getRowPrediction(vector<double> inputData, int ignoredColumn [], int numIgnored) {
     double result = 0;
-    //Assume that inputData hasn't gotten rid of the row we are searching yet (?)
-    inputData.erase(inputData.cbegin() + row); //TODO CHECK!
+    // Assume that inputData hasn't gotten rid of the row we are searching yet
+    for(int i = 0; i < numIgnored; i++){
+        inputData.erase(inputData.cbegin() + ignoredColumn[i]); //TODO CHECK!
+    }
     return result;
 }
 
@@ -187,6 +190,8 @@ void PredictiveNeuralNetwork<T>::displayDicts(){
         }
     }
 }
+
+
 
 //PRIVATE
 

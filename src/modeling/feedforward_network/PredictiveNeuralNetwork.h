@@ -31,7 +31,7 @@ public:
     std::vector<std::string> getDataCopy();
     std::string getRawDataType();
     void train(int rowNum) override;
-    double getRowPrediction(std::vector<double> inputData, int row);
+    double getRowPrediction(std::vector<double> inputData, int ignoredColumn [], int numIgnored);
     void displayWeights();
     void displayDicts();
 private:
@@ -43,7 +43,7 @@ private:
     std::vector<std::vector<double>> processDataForTraining(std::vector<std::vector<std::string>>& dataVector);
 //    std::list<std::set<int>> _sets;
     std::vector<std::vector<double>> _weights;
-    std::uniform_real_distribution<double> unif{0, 1};
+    std::uniform_real_distribution<double> unif{0, 0.01};
     std::default_random_engine re{43};
     std::map<int, std::map<std::string, int>> _dicts;
     bool _isTrained{false};
