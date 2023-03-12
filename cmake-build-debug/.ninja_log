@@ -1,12 +1,9 @@
 # ninja log v5
-0	259	6994838830131620	build.ninja	e352a01f83b0fe02
-5	2060	6994651693944584	CMakeFiles/Neural_Network_Visualizer.dir/main.cpp.obj	f6a6f71a3c3f3814
+0	259	7000795630346027	build.ninja	e352a01f83b0fe02
+7	4634	6994841131002745	CMakeFiles/Neural_Network_Visualizer.dir/main.cpp.obj	f6a6f71a3c3f3814
 30	1703	6988627267366451	CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/Model.cpp.obj	68a0ed322088bd90
 6	2336	6988747746165908	CMakeFiles/Neural_Network_Visualizer.dir/src/resource_methods/Resources.cpp.obj	4636f5cb0bbe76ab
+20	1862	6994841103509711	CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/feedforward_network/PredictiveNeuralNetwork.cpp.obj	ec4315979f6cecd6
 2	1374	6982749426968294	CMakeFiles/Neural_Network_Visualizer.dir/src/rendering/Renderer.cpp.obj	c7ac13d51e3af4b8
 12	1130	6994651684677578	CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/predictive_modeling/PredictiveNeuralNetwork.cpp.obj	e2ebec7dbd1772dc
-2060	2634	6994651699695718	Neural_Network_Visualizer.exe	5507f55f0f3b8061
-19	1711	6994839866891796	CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/feedforward_network/PredictiveNeuralNetwork.cpp.obj	ec4315979f6cecd6
-20	1862	6994841103509711	CMakeFiles/Neural_Network_Visualizer.dir/src/modeling/feedforward_network/PredictiveNeuralNetwork.cpp.obj	ec4315979f6cecd6
-7	4634	6994841131002745	CMakeFiles/Neural_Network_Visualizer.dir/main.cpp.obj	f6a6f71a3c3f3814
 4634	5290	6994841137617105	Neural_Network_Visualizer.exe	d625a3647d96956e

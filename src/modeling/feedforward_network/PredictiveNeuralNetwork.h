@@ -9,6 +9,7 @@
 #include <set>
 #include <map>
 #include "../Model.h"
+#include "Layer.h"
 
 enum ERR_FUNC{
     LOGCOSH
@@ -32,7 +33,7 @@ public:
     std::string getRawDataType();
     void train(int rowNum) override;
     double getRowPrediction(std::vector<double> inputData, int ignoredColumn [], int numIgnored);
-    void displayWeights();
+    void displayWeights(int layerNumber);
     void displayDicts();
 private:
     std::vector<std::string> trainDataVector;
@@ -42,9 +43,7 @@ private:
     std::vector<std::string> getDataRow(int rowNum);
     std::vector<std::vector<double>> processDataForTraining(std::vector<std::vector<std::string>>& dataVector);
 //    std::list<std::set<int>> _sets;
-    std::vector<std::vector<double>> _weights;
-    std::uniform_real_distribution<double> unif{0, 0.01};
-    std::default_random_engine re{43};
+    std::vector<Layer> _layers;
     std::map<int, std::map<std::string, int>> _dicts;
     bool _isTrained{false};
     ERR_FUNC _func{};

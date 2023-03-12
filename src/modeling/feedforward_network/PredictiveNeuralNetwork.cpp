@@ -43,13 +43,13 @@ template <typename T>
 PredictiveNeuralNetwork<T>::PredictiveNeuralNetwork(int inputNodes,
         int hiddenLayers, int outputNodes, int epochs, double learningRate, double allowedError, ERR_FUNC func):
     Model(inputNodes, hiddenLayers, outputNodes, epochs, learningRate, allowedError) {
-        this->_bias = unif(re);
+//        this->_bias = unif(re);
         this->_func = func;
 }
 
 template <typename T> PredictiveNeuralNetwork<T>::~PredictiveNeuralNetwork() {
     //TODO Save file
-    delete(addressof(_weights));
+//    delete(addressof(_weights));
     delete(addressof(_dicts));
     delete(addressof(trainDataVector));
     delete(addressof(_bias));
@@ -69,14 +69,7 @@ void PredictiveNeuralNetwork<T>::insertTrainingData(const std::string& pathName,
         imported.erase(imported.cbegin());
     }
     this->trainDataVector = imported;
-    this->_weights = vector<vector<double>>(); //Assumes all rows are same length
-    for(int i = 0; i < _hiddenLayers + 1; i++){
-        _weights.emplace_back();
-        for(int j = 0; j < trainDataVector.at(0).size(); j++){
-            _weights.at(i).push_back(unif(re));
-        }
-    }
-//    displayWeights();
+    //TODO DECLARE LAYERS
 }
 
 template <typename T>
@@ -105,7 +98,7 @@ string PredictiveNeuralNetwork<T>::getRawDataType(){
  *
  *  STEPS:
  *  1. Format data
- *  2. Instantiate weights as an empty vector<vector> of random generated numbers (as a vector because dot product)
+ *  2. Access weights, etc through a list of Layers (class Layer)
  *  3. Run through the training for _epochs number of epochs
  *  4. Make a prediction for the data
  */
@@ -130,16 +123,16 @@ void PredictiveNeuralNetwork<T>::train(int rowNum){
 ////                error = Resources::logCoshLoss();
 //        }
 //        First, repeat this process for each individual layer of the graph
-        for(const vector<double>& layer : _weights){
-            double real = 0.0;
-//            for(int j = 0; j < layer.size(); j++){
-//                if(j == rowNum){
-//                    //set the real variable to the value of modified componentvector at j
-//                }else{
-//                    //add modified componentvector * weight to error at point
-//                }
-//            }
-        }
+//        for(const vector<double>& layer : _weights){
+//            double real = 0.0;
+////            for(int j = 0; j < layer.size(); j++){
+////                if(j == rowNum){
+////                    //set the real variable to the value of modified componentvector at j
+////                }else{
+////                    //add modified componentvector * weight to error at point
+////                }
+////            }
+//        }
         cout << "------------------------------------------" << endl;
     }
     _isTrained = true;
@@ -168,12 +161,9 @@ double PredictiveNeuralNetwork<T>::getRowPrediction(vector<double> inputData, in
  * @tparam T Unused
  */
 template<typename T>
-void PredictiveNeuralNetwork<T>::displayWeights() {
-    for(const vector<double>& v : _weights){
-        for(double d : v){
-            cout << d << ", ";
-        }
-        cout << "" << endl;
+void PredictiveNeuralNetwork<T>::displayWeights(int layerNumber) {
+    for(Layer l : _layers){
+        l.displayWeights();
     }
 }
 
